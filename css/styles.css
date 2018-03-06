@@ -1,9 +1,15 @@
 body {
   padding: 5vh;
   font: 300 14px 'Lato', sans-serif;
-  color: #747704; 
+  color: #747704;
   background: #fff;
   font-weight: 300;
   padding-left: 1vh;
   padding-right: 1vh;
+}
+
+#myBox {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
 }

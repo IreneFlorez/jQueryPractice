@@ -25,6 +25,16 @@ $( document ).ready(function(){
   var box = $("#myBox");
   var colorString="rgb(";
 
+  setInterval(function(){
+    colorString="rgb(";
+    colorString = colorString +
+    giveMeaRandomNumber() + ", " +
+    giveMeaRandomNumber() + ", " +
+    giveMeaRandomNumber() + ")";
+
+    box.css( "background-color", colorString);
+  }, 5000);
+
   $("#buttonColor").click( function (){
     colorString="rgb(";
     colorString = colorString +

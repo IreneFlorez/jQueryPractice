@@ -1,17 +1,23 @@
-
 $( document ).ready( function () {
     $("#submit").click( function (){
       var emailText = $("#email").val();
       var passwordText = $("#password").val();
       //console.log(validateEmailemailText(emailText), passwordText);
 
+
       $("#error").css("visibility", "visible");
 
+
       if (emailText == "hello@gmail.com") {
+
         if (passwordText == "1234"){
-          console.log("That is the right password.");
+          var message = "That is the right password";
+
+          $("#error").html(message);
         } else {
-          console.log("That is not the right password");
+          var errorMessage = "That is not the right password";
+
+          $("#error").html(errorMessage);
         }
       } else {
           var errorMessage = "No user exists with email " + emailText + " exists.";

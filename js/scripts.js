@@ -1,53 +1,28 @@
-// console.log("connected");
-//
-// $( document ).ready(function(){
-//   $("#profile-text").css("color", "red");
-//   console.log("jQuery works");
-// });
 
-// $( document ).ready(function(){
-//   $("#profile-text").click(function(){
-//     $("h1").css("color", "gold");
-// });});
+$( document ).ready( function () {
+    $("#submit").click( function (){
+      var emailText = $("#email").val();
+      var passwordText = $("#password").val();
+      //console.log(validateEmailemailText(emailText), passwordText);
 
-// $( document ).ready(function(){
-//   var currentColor = $("profile-text").css("color");
-//
-//   if (currentColor == "rgb(0,0,0)"){
-//     $("#profile-text").css("color", "grey");
-//   } else {
-//     $("#profile-text").css("color", "rgb(0,0,0)");
-//   }
-// });});
+      $("#error").css("visibility", "visible");
 
-$( document ).ready(function(){
+      if (emailText == "hello@gmail.com") {
+        if (passwordText == "1234"){
+          console.log("That is the right password.");
+        } else {
+          console.log("That is not the right password");
+        }
+      } else {
+          var errorMessage = "No user exists with email " + emailText + " exists.";
 
-  var box = $("#myBox");
-  var colorString="rgb(";
-
-  setInterval(function(){
-    colorString="rgb(";
-    colorString = colorString +
-    giveMeaRandomNumber() + ", " +
-    giveMeaRandomNumber() + ", " +
-    giveMeaRandomNumber() + ")";
-
-    box.css( "background-color", colorString);
-  }, 5000);
-
-  $("#buttonColor").click( function (){
-    colorString="rgb(";
-    colorString = colorString +
-    giveMeaRandomNumber() + ", " +
-    giveMeaRandomNumber() + ", " +
-    giveMeaRandomNumber() + ")";
-
-    box.css("background-color", colorString);
-  });
+          $("#error").html("<p>" + errorMessage+ "</p>");
+      }
+    });
 });
 
-function giveMeaRandomNumber(){
-  var number = Math.random() * 255;
-  number = Math.floor(number);
-  return number;
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
+//source: Mevius: https://stackoverflow.com/users/3518452/rnevius See the question at: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript

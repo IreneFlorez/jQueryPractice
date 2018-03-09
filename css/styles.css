@@ -8,8 +8,41 @@ body {
   padding-right: 1vh;
 }
 
-#myBox {
-  background-color: blue;
-  height: 100px;
-  width: 100px;
+form {
+  border: 1px red solid;
+  padding: 10px;
+}
+
+::placeholder {
+  color:white;
+  font-size: italic;
+}
+
+input, button {
+  margin:20px;
+  padding: 20px;
+  font-size: 2em;
+  border-radius: 15px;
+  border: outset dashed #FFDAE9 2px;
+}
+
+button {
+  height: 60px;
+  width: 195px;
+  border: solid green 1px;
+  padding: 0;
+}
+
+button:hover{
+  background-color: #FFDDF4;
+}
+
+#error{
+  visibility: hidden;
+  height: 300px;
+  width: 300px;
+  background-color: FF69B4;
+  color: red;
+  font-size: 2em;
+  text-align: center;
 }
